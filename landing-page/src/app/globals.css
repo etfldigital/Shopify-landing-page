@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --fl-sort: #232526;
+  --fl-dark-blue: #24313d;
+  --fl-blue: #394e61;
+  --fl-green: #00d67e;
+  --fl-green-light: #00f28e;
+  --fl-ice: #b8d4e8;
+  --fl-light-gray: #f5f7fa;
+  --fl-white: #ffffff;
+}
+
+@theme inline {
+  --color-fl-sort: var(--fl-sort);
+  --color-fl-dark-blue: var(--fl-dark-blue);
+  --color-fl-blue: var(--fl-blue);
+  --color-fl-green: var(--fl-green);
+  --color-fl-green-light: var(--fl-green-light);
+  --color-fl-ice: var(--fl-ice);
+  --color-fl-light-gray: var(--fl-light-gray);
+  --color-fl-white: var(--fl-white);
+  --font-display: "Funnel Display", system-ui, sans-serif;
+  --font-sans: "Funnel Sans", system-ui, sans-serif;
+}
+
+body {
+  background: var(--fl-white);
+  color: var(--fl-sort);
+  font-family: "Funnel Sans", system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Funnel Display", system-ui, sans-serif;
+}
+
+/* Smooth scrollbar */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--fl-light-gray);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--fl-blue);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--fl-dark-blue);
+}
+
+/* Counter animation helper */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Gradient animation */
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+}
